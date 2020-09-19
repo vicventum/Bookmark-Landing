@@ -2,125 +2,196 @@
 
     // Container
     &-box {
-        --width: 50rem;
+        --width: 90%;
         --p-y: 2.2rem;
-        --p-x: 1.4rem;
-
-        max-width: var(--width);
+        width: var(--width);
         margin: 0 auto;
+        max-width: $max-width;
+
 
         @include media('>=tablet') {
-            --width: 70rem;
-
             --p-y: 2.4rem;
-            --p-x: 2.2rem;
-        }
-        @include media('>=laptop') {
-            --width: 90rem;
-        }
-        @include media('>=desktop') {
-            max-width: $max-width;
+            --width: 85%;
         }
 
-    
+        @include media('>=laptop') {
+            --width: 80%;
+        }
+
+        @include media('>=desktop') {
+            // max-width: $max-width;
+        }
+
+
         &--pall {
             padding-top: var(--p-y);
             padding-bottom: var(--p-y);
-            padding-left: var(--p-x);
-            padding-right: var(--p-x);
+            // padding-left: var(--p-x);
+            // padding-right: var(--p-x);
 
         }
-    
+
         &--py {
             padding-top: var(--p-y);
             padding-bottom: var(--p-y);
-    
+
         }
+
         &--px {
-            padding-left: var(--p-x);
-            padding-right: var(--p-x);
+            // padding-left: var(--p-x);
+            // padding-right: var(--p-x);
         }
-    
+
         &--pt {
             padding-top: var(--p-y);
         }
+
         &--pb {
             padding-bottom: var(--p-y);
-    
+
         }
-        &--pl {padding-left: var(--p-x);}
-        &--pr {padding-right: var(--p-x);}
-    
-    }
 
-    // Responsive Grid 
-    &-responsiveGrid {
-        display: grid;
-        // gap: 1em;
-        grid-template-columns: repeat(auto-fit, minmax($show-size, 1fr));
-    }
-        
-    // Resposive Flexbox
-    &-responsiveFlex {
-        display: flex;
-        flex-wrap: wrap;
-    
-        & > * {
-            flex: 1 1 $show-size;
+        &--pl {
+            // padding-left: var(--p-x);
         }
+
+        &--pr {
+            // padding-right: var(--p-x);
+        }
+
+    }
+
+
+    &-text-center {
+        text-align: center;
+    }
+
+    &-truncate {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     
-
-    &-text-center { text-align: center;}
-    &-round-img { border-radius: 50%;}
-    &-line {
-        height: 3px;
-        width: 80%;
-        background-color: #ccc;
-        margin: 4rem auto;
-
-        @include media('>=laptop') {
-            width: 40%;
-        }
+    &-round-img {
+        border-radius: 50%;
     }
-
+    
 
     // Backgrounds  
     &-bg {
         &--yellow {
-            background-color: $yellow-base;
+            // background-color: $yellow-base;
         }
+
         &--dark {
-            background-color: $dark;
+            // background-color: $dark;
         }
+
         &--light {
-            background-color: $light;
+            // background-color: $light;
         }
+
         &--red {
-            background-color: $red-base;
+            // // // background-color: $red-base;
         }
+
         &--purple {
-            background-color: $purple-base;
-        }   
+            // background-color: $purple-base;
+        }
     }
-    
+
+
+    // Z-levels
+    &-depth {
+
+        &-0 {
+            box-shadow: none;
+        }
+
+        /* 2dp elevation modified*/
+        &-1 {
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+                0 3px 1px -2px rgba(0, 0, 0, 0.12),
+                0 1px 5px 0 rgba(0, 0, 0, 0.2);
+
+            &-half {
+                box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14),
+                    0 1px 7px 0 rgba(0, 0, 0, 0.12),
+                    0 3px 1px -1px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        /* 6dp elevation modified*/
+        &-2 {
+            box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+                0 1px 10px 0 rgba(0, 0, 0, 0.12),
+                0 2px 4px -1px rgba(0, 0, 0, 0.3);
+        }
+
+        /* 12dp elevation modified*/
+        &-3 {
+            box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12),
+                0 5px 5px -3px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 16dp elevation */
+        &-4 {
+            box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
+                0 6px 30px 5px rgba(0, 0, 0, 0.12),
+                0 8px 10px -7px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 24dp elevation */
+        &-5 {
+            box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14),
+                0 9px 46px 8px rgba(0, 0, 0, 0.12),
+                0 11px 15px -7px rgba(0, 0, 0, 0.2);
+        }
+
+        &-2,
+        &-3,
+        &-4,
+        &-5 {
+
+            &--hoverable {
+                transition: box-shadow .25s ease-in-out;
+
+                &:hover {
+                    @extend .u-depth-1;
+                }
+            }
+        }
+    }
+
+
     // Visibility
-    &-none { display: none; }
-    &-invisible { overflow: hidden; }
+    &-none {
+        display: none;
+    }
+
+    &-invisible {
+        overflow: hidden;
+    }
 
     &-hide-for-mobile {
+
         // Hide for tablet and mobile
         @include media('<tablet') {
-            display: none!important;
+            display: none !important;
         }
     }
+
     &-hide-for-desktop {
+
         // Hide for desktop viewport widths
         @include media('>=tablet') {
-            display: none!important;
+            display: none !important;
         }
     }
-    
-    
-    
+
+
+
 }
+

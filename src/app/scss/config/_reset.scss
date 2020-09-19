@@ -1,12 +1,9 @@
 // Importar tipografia
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400|Roboto:300,400,700&display=swap');
-// Importar iconos
-@import url("https://file.myfontastic.com/CtJ7M0B6DyxJKbZveWPadP/icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
 
 /********************* RESET *********************/
 html {
     box-sizing: border-box;
-    background-color: $dark;
     font-size: 62.5%;
     scroll-behavior: smooth;
 }
@@ -21,27 +18,52 @@ html {
 
 // Por si un elemento se desborda
 body {
-    font-family: $title-font;
-    font-size: $font-size;
-    line-height: $line-height;
-    color: $light;
-    background-color: $dark;
+    font-family: $primary-font;
+    font-size: $body-size;
+    // line-height: $line-height;
+    color: var(--gray-blue);
+    background-color: $light;
 }
 
-h1, h2, h3 {
-    margin: 0;
+h1, h2 {
+    // margin: 0;
     font-weight: $fw-bold
 }
 h1 {font-size: $h1;}
 h2 {font-size: $h2;}
 h3 {
     font-size: $h3;
-    font-weight: $fw-light;
+    font-weight: $fw-regular
+}
+p {
+    font-family: $primary-font;
+    font-weight: $fw-regular;
+    line-height: 1.7;
+}
+a {
+    font-weight: $fw-regular;
+    font-size: $link-size;
+    color: $primary-blue;
+
+    text-decoration: none;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    transition: color .3s ease-in-out;
+
+    &:hover{color: $primary-red;}
 }
 
+img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
 ul {
-    list-style: none;
     padding-left: 0;
     margin-top: 0;
     margin-bottom: 0;
+}
+li {
+    list-style: none;
 }

@@ -1,49 +1,59 @@
-$title-size: var(--title-size);
-$menu-top-size: var(--menu-top-size);
-$menu-bottom-size: var(--menu-bottom-size);
-$shows-size: var(--shows-size);
-$font-size: var(--font-size);
-$min-size: var(--min-size);
+:root {
+  --primary-blue: hsl(231, 69%, 60%);
+  --primary-red: hsl(0, 94%, 66%);
 
-$show-size: var(--show-size);
+  --gray-blue: hsl(229, 8%, 60%);
+  --dark-blue: hsl(229, 31%, 21%);
 
-$fw-light: var(--fw-light);
-$fw-normal: var(--fw-normal);
+  --light: white;
+  --dark: black;
+
+
+  // Fonts
+  --primary-font: Rubic, sans-serif;
+
+  --body-size: 1.8rem;
+  --link-size: calc(var(--body-size - 0.2rem));
+
+  --fw-regular: 400;
+  --fw-bold: 800;
+
+
+  // General sizes
+  --max-width: 120rem;
+  --border-radius: .5rem;
+
+}
+$primary-blue: hsl(231, 69%, 60%);
+$primary-red: hsl(0, 94%, 66%);
+$gray-blue: hsl(229, 8%, 60%);
+$dark-blue: hsl(229, 31%, 21%);
+$light: white;
+$dark: black;
+
+// Sass
+$primary-font: var(--primary-font);
+$body-size: var(--body-size);
+$link-size: var(--link-size);
+$fw-regular: var(--fw-regular);
 $fw-bold: var(--fw-bold);
-$line-height: var(--line-height);
-
-
-$second-dark: var(--second-dark);
 $max-width: var(--max-width);
-$header-height: var(--header-height);
-$logo-width: var(--logo-width);
-$logo-height: var(--logo-height);
-$logo-spacing: var(--logo-spacing);
+$border-radius: var(--border-radius);
 
-$h1: var(--h1);
-$h2: var(--h2);
-$h3: var(--h3);
+$h1: 6.72rem;
+$h2: 5.76rem;
+$h3: 2rem;
 
-$sp-1: 1rem;
-$sp-2: 2rem;
-$sp-3: 3rem;
-$sp-4: 4rem;
-$sp-5: 5rem;
-
-$spaceamounts: (1,2,3,4,5);
+$z-last: -9999;
+$z1: 1;
+$z2: 10;
+$z3: 100;
+$z4: 1000;
 
 // Breakpoints
 $breakpoints: (
   'phone': 420px,
   'tablet': 768px,
   'laptop': 1024px,
-  'desktop': 1400px
-) !default;
-
-// z-index
-$z-index: (
-    tooltip: 100,
-    modal: 500,
-    overlay: 750,
-    offcanvas: 1000
+  'desktop': 1280px
 );
