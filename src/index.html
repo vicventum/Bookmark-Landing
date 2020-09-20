@@ -1,48 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  
+
   <!--Import Google Icon Font-->
   <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
 
   <!-- Font Awesom -->
   <script src="https://kit.fontawesome.com/a612a0d04c.js" crossorigin="anonymous"></script>
-  
-  
+
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
   <title>Bookmark</title>
-</head>
-<body>
-  
-  <div class="card blue-grey darken-1">
-    <div class="card-content white-text">
-      <span class="card-title"></span>
-      <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-    </div>
-    <div class="card-action">
-      <a href="#">This is a link</a>
-      <a href="#">This is a link</a>
-    </div>
-  </div>
 
-  <div class="card ">
-    <div class="card-image">
-      <img src="" alt=""/>
-      <span class="card-title"></span>
+  <style>
+    body {
+      background-color: rgb(99, 99, 99)!important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="u-box">
+
+      <nav class="nav 
+      v-flex j-content-between a-items-center">
+        <!-- Logo -->
+        <a class="nav__logo
+          w-1/2 u-box--py" href="index.html"><img src="assets/img/logo-bookmark.svg" alt="Logo Bookmark" ></a>
+
+        <!-- Hamburguer -->
+        <button id="iconHamburger" class="nav__hamburger hamburger hamburger--arrowalt 
+          u-hide-for-desktop"
+          type="button">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+  
+        <!-- Menu -->
+        <ul class="nav__liks u-hide-for-mobile">
+          <li class="nav__link"><a href="#">FEATURE</a></li>
+          <li class="nav__link"><a href="#">PRICING</a></li>
+          <li class="nav__link"><a href="#">CONTACT</a></li>
+          <li class="nav__link"><a href="#">LOGIN</a></li>
+        </ul>
+      </nav>
+
     </div>
-    <div class="card-content">
-      <p>I am a very simple card. I am good at containing small bits of information.I am convenient because I require little markup to use effectively.</p>
-    </div>
-    <div class="card-action">
-      <a href="#">This is a link</a>
-    </div>
-  </div>
+  </header>
 
 
   <script src="index.js"></script>
 </body>
+
 </html>

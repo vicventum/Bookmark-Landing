@@ -3,14 +3,14 @@
     // Container
     &-box {
         --width: 90%;
-        --p-y: 2.2rem;
+        --p-y: 2.5rem;
         width: var(--width);
         margin: 0 auto;
         max-width: $max-width;
 
 
         @include media('>=tablet') {
-            --p-y: 2.4rem;
+            --p-y: 3rem;
             --width: 85%;
         }
 
