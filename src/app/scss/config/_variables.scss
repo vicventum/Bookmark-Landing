@@ -1,3 +1,9 @@
+// Breakpoints
+$breakpoints: ('phone': 420px,
+  'tablet': 768px,
+  'laptop': 1024px,
+  'desktop': 1280px);
+
 :root {
   --primary-blue: hsl(231, 69%, 60%);
   --primary-red: hsl(0, 94%, 66%);
@@ -14,10 +20,14 @@
   --primary-font: Rubic, sans-serif;
 
   --body-size: 1.6rem;
+  --boton-size: 1.5rem;
   --link-size: calc(var(--body-size) - 0.4rem);
   --h1: 3rem;
   --h2: 5.76rem;
   --h3: 2rem;
+
+  --lh-title: 1.4;
+  --lh-body: 1.6;
 
   --fw-regular: 400;
   --fw-bold: 500;
@@ -27,6 +37,18 @@
   // General sizes
   --max-width: 120rem;
   --border-radius: .5rem;
+
+  @include media('>=tablet') {
+    --h1: 4.8rem;
+    --lh-title: 1.2;
+
+    --body-size: 1.7rem;
+    --boton-size: 1.1rem;
+
+  }
+  @include media('>=laptop') {
+    --boton-size: 1.5rem;
+  }
 
 }
 
@@ -40,10 +62,15 @@ $dark: black;
 // Sass
 $primary-font: var(--primary-font);
 $body-size: var(--body-size);
+$boton-size: var(--boton-size);
 $link-size: var(--link-size);
+
+$lh-title: var(--lh-title);
+$lh-body: var(--lh-body);
 $fw-regular: var(--fw-regular);
 $fw-bold: var(--fw-bold);
 $fw-xbold: var(--fw-xbold);
+
 $max-width: var(--max-width);
 $border-radius: var(--border-radius);
 
@@ -57,11 +84,3 @@ $z-2: 10;
 $z-3: 100;
 $z-4: 1000;
 
-// Hamburger.js
-$hamburger-layer-color: var(--dark-blue);
-
-// Breakpoints
-$breakpoints: ('phone': 420px,
-  'tablet': 768px,
-  'laptop': 1024px,
-  'desktop': 1280px);

@@ -3,32 +3,59 @@
   &__img {
     position: relative;
     z-index: $z-last;
+    margin: 0 auto;
     margin-bottom: 4rem;
+
+    max-width: 35rem;
+
+    @include media('>=tablet') {
+      max-width: initial;
+    }
 
   }
   
   &__bg {
-    --size: 90%;
+    --size: 100%;
+    --radius: 30%;
+    --right: -32vw;
 
     position: absolute;
     z-index: $z-last;
     bottom: 0;
-    right: -10vw;
+    right: var(--right);
     
     width: var(--size);
-    height: calc(var(--size) - 10%);
+    height: 80%;
 
-    border-top-left-radius: 30%;
-    border-bottom-left-radius: 30%;
+    border-top-left-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
 
     background-color: var(--primary-blue);
+
+    @include media('>=tablet') {
+      --size: 120%;
+      --radius: 27%;
+      --right: -20vw;
+    }
   }
 
   &__desc {
     text-align: center;
+
+    @include media('>=tablet') {
+      text-align: left;
+      width: 85%;
+    }
   }
 
   &__text {
     margin-bottom: 3rem;
+  }
+
+  &__btns {
+
+    a {
+      margin-right: 2rem;
+    }
   }
 }

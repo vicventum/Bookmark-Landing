@@ -1,6 +1,6 @@
 .btn {
   display: inline-block;
-  font-size: calc(var(--body-size) - .1rem);
+  font-size: $boton-size;
   font-weight: $fw-xbold;
   text-transform: capitalize;
   // letter-spacing: 1px;
@@ -17,7 +17,7 @@
   cursor: pointer;
   @extend .u-depth-1;
 
-  transition-property: background-color, border-color, color;
+  transition-property: background-color, border-color, color, box-shadow;
   transition-duration: .2s;
   transition-timing-function: ease-in-out;
 
@@ -25,10 +25,11 @@
     background-color: transparent;
     border-color: var(--primary-blue);
     color: var(--primary-blue);
+    @extend .u-depth-1;
   }
 
   @include media('>=tablet') {
-    padding: 1.2rem 3rem;
+    padding: 1.2rem 2rem;
   }
 
   &--mobile-menu {
@@ -38,10 +39,11 @@
     font-weight: $fw-bold;
     letter-spacing: 2px;
 
-    @extend .u-depth-2;
+    @extend .u-depth-3;
 
     @include media('>=tablet') {
       margin-top: 0;
+      padding: 1.2rem 3rem;
       font-size: $link-size;
       font-weight: $fw-xbold;
 

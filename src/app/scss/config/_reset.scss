@@ -30,7 +30,7 @@ h1,h2,h3 {color: var(--dark-blue);}
 h1, h2 {
     // margin: 0;
     font-weight: $fw-xbold;
-    line-height: 1.4;
+    line-height: var(--lh-title);
     margin-bottom: $body-size;
 }
 h1 {font-size: $h1;}
@@ -42,7 +42,7 @@ h3 {
 p {
     font-family: $primary-font;
     font-weight: $fw-regular;
-    line-height: 1.6;
+    line-height: var(--lh-body);
 }
 a {
     font-weight: $fw-regular;
