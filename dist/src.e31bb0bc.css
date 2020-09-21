@@ -44,6 +44,7 @@ body {
   font-size: var(--body-size);
   color: var(--gray-blue);
   background-color: rgba(255, 255, 255, 0.9);
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -427,6 +428,23 @@ li {
   color: var(--gray-dark);
 }
 
+.slide__img {
+  position: relative;
+  z-index: -9999;
+  margin-bottom: 4rem;
+}
+.slide__bg {
+  --size: 90%;
+  position: absolute;
+  z-index: -9999;
+  bottom: 0;
+  right: -10vw;
+  width: var(--size);
+  height: calc(var(--size) - 10%);
+  border-top-left-radius: 30%;
+  border-bottom-left-radius: 30%;
+  background-color: var(--primary-blue);
+}
 .slide__desc {
   text-align: center;
 }

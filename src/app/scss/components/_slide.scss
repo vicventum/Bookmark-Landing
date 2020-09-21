@@ -1,5 +1,28 @@
 .slide {
+
+  &__img {
+    position: relative;
+    z-index: $z-last;
+    margin-bottom: 4rem;
+
+  }
   
+  &__bg {
+    --size: 90%;
+
+    position: absolute;
+    z-index: $z-last;
+    bottom: 0;
+    right: -10vw;
+    
+    width: var(--size);
+    height: calc(var(--size) - 10%);
+
+    border-top-left-radius: 30%;
+    border-bottom-left-radius: 30%;
+
+    background-color: var(--primary-blue);
+  }
 
   &__desc {
     text-align: center;

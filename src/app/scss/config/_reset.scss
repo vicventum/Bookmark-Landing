@@ -23,6 +23,8 @@ body {
     // line-height: $line-height;
     color: var(--gray-blue);
     background-color: $light;
+
+    overflow-x: hidden;
 }
 h1,h2,h3 {color: var(--dark-blue);}
 h1, h2 {
