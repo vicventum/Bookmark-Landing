@@ -11,7 +11,7 @@
   --dark: black;
   --primary-font: Rubic, sans-serif;
   --body-size: 1.8rem;
-  --link-size: calc(var(--body-size - 0.2rem));
+  --link-size: calc(var(--body-size ) - 0.4rem);
   --fw-regular: 400;
   --fw-bold: 500;
   --max-width: 120rem;
@@ -68,7 +68,7 @@ p {
 a {
   font-weight: var(--fw-regular);
   font-size: var(--link-size);
-  color: #5368df;
+  color: var(--primary-blue);
   text-decoration: none;
   text-transform: uppercase;
   cursor: pointer;
@@ -187,32 +187,32 @@ li {
  * Squeeze
  */
 .hamburger--squeeze .hamburger-inner {
-  -webkit-transition-duration: 0.075s;
-       -o-transition-duration: 0.075s;
-          transition-duration: 0.075s;
+  -webkit-transition-duration: 0.2s;
+       -o-transition-duration: 0.2s;
+          transition-duration: 0.2s;
   -webkit-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
        -o-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
           transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .hamburger--squeeze .hamburger-inner::before {
-  -webkit-transition: top 0.075s 0.12s ease, opacity 0.075s ease;
-  -o-transition: top 0.075s 0.12s ease, opacity 0.075s ease;
-  transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+  -webkit-transition: top 0.2s 0.3s ease, opacity 0.2s ease;
+  -o-transition: top 0.2s 0.3s ease, opacity 0.2s ease;
+  transition: top 0.2s 0.3s ease, opacity 0.2s ease;
 }
 .hamburger--squeeze .hamburger-inner::after {
-  -webkit-transition: bottom 0.075s 0.12s ease, -webkit-transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  transition: bottom 0.075s 0.12s ease, -webkit-transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  -o-transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19), -webkit-transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -webkit-transition: bottom 0.2s 0.3s ease, -webkit-transform 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: bottom 0.2s 0.3s ease, -webkit-transform 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -o-transition: bottom 0.2s 0.3s ease, transform 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: bottom 0.2s 0.3s ease, transform 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: bottom 0.2s 0.3s ease, transform 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19), -webkit-transform 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .hamburger--squeeze.is-active .hamburger-inner {
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
-  -webkit-transition-delay: 0.12s;
-       -o-transition-delay: 0.12s;
-          transition-delay: 0.12s;
+  -webkit-transition-delay: 0.3s;
+       -o-transition-delay: 0.3s;
+          transition-delay: 0.3s;
   -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
        -o-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
           transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -220,20 +220,20 @@ li {
 .hamburger--squeeze.is-active .hamburger-inner::before {
   top: 0;
   opacity: 0;
-  -webkit-transition: top 0.075s ease, opacity 0.075s 0.12s ease;
-  -o-transition: top 0.075s ease, opacity 0.075s 0.12s ease;
-  transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+  -webkit-transition: top 0.2s ease, opacity 0.2s 0.3s ease;
+  -o-transition: top 0.2s ease, opacity 0.2s 0.3s ease;
+  transition: top 0.2s ease, opacity 0.2s 0.3s ease;
 }
 .hamburger--squeeze.is-active .hamburger-inner::after {
   bottom: 0;
   -webkit-transform: rotate(-90deg);
       -ms-transform: rotate(-90deg);
           transform: rotate(-90deg);
-  -webkit-transition: bottom 0.075s ease, -webkit-transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: bottom 0.075s ease, -webkit-transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
-  -o-transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -webkit-transition: bottom 0.2s ease, -webkit-transform 0.2s 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: bottom 0.2s ease, -webkit-transform 0.2s 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -o-transition: bottom 0.2s ease, transform 0.2s 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: bottom 0.2s ease, transform 0.2s 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: bottom 0.2s ease, transform 0.2s 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.2s 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .u-box {
@@ -358,7 +358,7 @@ li {
   font-size: var(--body-size);
   font-weight: var(--fw-bold);
   letter-spacing: 2px;
-  padding: 1rem var(--body-size);
+  padding: 1rem 3rem;
   border: 2.5px solid rgba(255, 255, 255, 0.9);
   border-radius: var(--border-radius);
   background-color: transparent;
@@ -368,6 +368,21 @@ li {
 .btn--mobile-menu {
   margin-top: 2rem;
   width: 100%;
+}
+@media (min-width: 768px) {
+  .btn--mobile-menu {
+    margin-top: 0;
+    font-size: var(--link-size);
+    background-color: var(--primary-red);
+    border-color: var(--primary-red);
+    -webkit-transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    -o-transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+  .btn--mobile-menu:hover {
+    background-color: transparent;
+    color: var(--primary-red);
+  }
 }
 
 .header {
@@ -393,6 +408,17 @@ li {
   transition: transform 0.5s ease-out, visibility 0.5s ease-out;
   transition: transform 0.5s ease-out, visibility 0.5s ease-out, -webkit-transform 0.5s ease-out;
 }
+@media (min-width: 768px) {
+  .header .nav__links {
+    position: static;
+    background-color: initial;
+    padding: initial;
+    visibility: visible;
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
 .header .nav__links.open {
   visibility: visible;
   -webkit-transform: translateY(0);
@@ -410,6 +436,23 @@ li {
   display: inline-block;
   padding: 2rem;
   color: var(--light);
+}
+@media (min-width: 768px) {
+  .header .nav__link {
+    border: initial;
+  }
+  .header .nav__link a {
+    width: initial;
+    padding: initial;
+    margin-right: 4rem;
+    color: initial;
+    -webkit-transition: color 0.3s ease-in-out;
+    -o-transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
+  }
+  .header .nav__link a:hover {
+    color: var(--primary-red);
+  }
 }
 .header .nav__icons {
   position: absolute;

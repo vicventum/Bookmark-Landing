@@ -43,7 +43,7 @@ p {
 a {
     font-weight: $fw-regular;
     font-size: $link-size;
-    color: $primary-blue;
+    color: var(--primary-blue);
 
     text-decoration: none;
     text-transform: uppercase;
