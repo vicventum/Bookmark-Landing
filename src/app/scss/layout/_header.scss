@@ -44,9 +44,10 @@
       letter-spacing: 2px;
       font-weight: $fw-bold;
       text-align: center;
-
+      
       a {
         width: 100%;
+        font-size: $body-size;
         display: inline-block;
         padding: 2rem;
         color: var(--light);
@@ -60,6 +61,7 @@
           width: initial;
           padding: initial;
           margin-right: 4rem;
+          font-size: $link-size;
 
           color: initial;
 

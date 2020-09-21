@@ -1,37 +1,69 @@
 .btn {
-  font-size: $body-size;
-  font-weight: $fw-bold;
-  letter-spacing: 2px;
-  padding: 1rem 3rem;
+  display: inline-block;
+  font-size: calc(var(--body-size) - .1rem);
+  font-weight: $fw-xbold;
+  text-transform: capitalize;
+  // letter-spacing: 1px;
+  padding: 1.2rem;
 
-  border: 2.5px solid $light;
+  border: 2.5px solid;
+  border-color: var(--primary-blue);
   border-radius: $border-radius;
 
-  background-color: transparent;
+  background-color: var(--primary-blue);
   color: $light;
 
 
   cursor: pointer;
   @extend .u-depth-1;
-  
+
+  transition-property: background-color, border-color, color;
+  transition-duration: .2s;
+  transition-timing-function: ease-in-out;
+
+  &:hover {
+    background-color: transparent;
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+  }
+
+  @include media('>=tablet') {
+    padding: 1.2rem 3rem;
+  }
+
   &--mobile-menu {
     margin-top: 2rem;
     width: 100%;
+    color: $light;
+    font-weight: $fw-bold;
+    letter-spacing: 2px;
 
     @extend .u-depth-2;
 
     @include media('>=tablet') {
       margin-top: 0;
       font-size: $link-size;
+      font-weight: $fw-xbold;
 
       background-color: var(--primary-red);
       border-color: var(--primary-red);
 
-      transition: background-color .3s ease-in-out, color .3s ease-in-out;
       &:hover {
         background-color: transparent;
         color: var(--primary-red);
+        border-color: var(--primary-red);
       }
+    }
+  }
+
+  &--gray {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--gray-dark);
+
+    &:hover {
+      border-color: var(--gray-dark);
+      color: var(--gray-dark);
     }
   }
 }

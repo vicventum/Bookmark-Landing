@@ -10,8 +10,7 @@
 @import "../../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
 // --- v-grid
 @import "../vendor/v-grid.min.css";
-
-// Materialize
+// --- Materialize
 // @import "../../../node_modules/materialize-css/dist/css/materialize.min.css";
 
 
@@ -23,6 +22,7 @@
 
 // components
 @import "components/buttons";
+@import "components/slide";
 
 // layout
 @import "layout/header";
