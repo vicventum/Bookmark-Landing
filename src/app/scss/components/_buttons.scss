@@ -1,0 +1,23 @@
+.btn {
+  font-size: $body-size;
+  font-weight: $fw-bold;
+  letter-spacing: 2px;
+  padding: 1rem $body-size;
+
+  border: 2.5px solid $light;
+  border-radius: $border-radius;
+
+  background-color: transparent;
+  color: $light;
+
+
+  cursor: pointer;
+  @extend .u-depth-1;
+  
+  &--mobile-menu {
+    margin-top: 2rem;
+    width: 100%;
+
+    @extend .u-depth-2;
+  }
+}

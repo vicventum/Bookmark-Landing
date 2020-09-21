@@ -4,6 +4,8 @@
     &-box {
         --width: 90%;
         --p-y: 2.5rem;
+        --p-x: calc(var(--p-y) - .5rem);
+
         width: var(--width);
         margin: 0 auto;
         max-width: $max-width;
@@ -26,8 +28,8 @@
         &--pall {
             padding-top: var(--p-y);
             padding-bottom: var(--p-y);
-            // padding-left: var(--p-x);
-            // padding-right: var(--p-x);
+            padding-left: var(--p-x);
+            padding-right: var(--p-x);
 
         }
 
@@ -61,6 +63,20 @@
 
     }
 
+    &-icon {
+        $size: 3rem;
+        font-size: $size;
+        margin: 0 2rem;
+        color: $light;
+        // cursor: pointer;
+
+        &--small {
+            font-size: $size - .4rem;
+        }
+        &--big {
+            font-size: $size + 2rem;
+        }
+    }
 
     &-text-center {
         text-align: center;

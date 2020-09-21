@@ -4,6 +4,7 @@
 
   --gray-blue: hsl(229, 8%, 60%);
   --dark-blue: hsl(229, 31%, 21%);
+  --transparent-blue: hsla(229, 31%, 21%, 0.8);
 
   --light: white;
   --dark: black;
@@ -16,7 +17,7 @@
   --link-size: calc(var(--body-size - 0.2rem));
 
   --fw-regular: 400;
-  --fw-bold: 800;
+  --fw-bold: 500;
 
 
   // General sizes
@@ -28,7 +29,7 @@ $primary-blue: hsl(231, 69%, 60%);
 $primary-red: hsl(0, 94%, 66%);
 $gray-blue: hsl(229, 8%, 60%);
 $dark-blue: hsl(229, 31%, 21%);
-$light: white;
+$light: rgba(255, 255, 255, 0.9);
 $dark: black;
 
 // Sass
@@ -45,10 +46,10 @@ $h2: 5.76rem;
 $h3: 2rem;
 
 $z-last: -9999;
-$z1: 1;
-$z2: 10;
-$z3: 100;
-$z4: 1000;
+$z-1: 1;
+$z-2: 10;
+$z-3: 100;
+$z-4: 1000;
 
 // Hamburger.js
 $hamburger-layer-color: var(--dark-blue);

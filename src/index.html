@@ -24,7 +24,7 @@
   </style>
 </head>
 
-<body>
+<body id="body">
 
   <!-- HEADER -->
   <header class="header">
@@ -37,7 +37,7 @@
           w-1/2 u-box--py" href="index.html"><img src="assets/img/logo-bookmark.svg" alt="Logo Bookmark" ></a>
 
         <!-- Hamburguer -->
-        <button id="iconHamburger" class="nav__hamburger hamburger hamburger--arrowalt 
+        <button id="iconHamburger" class="nav__hamburger hamburger hamburger--squeeze 
           u-hide-for-desktop"
           type="button">
           <span class="hamburger-box">
@@ -46,11 +46,20 @@
         </button>
   
         <!-- Menu -->
-        <ul class="nav__liks u-hide-for-mobile">
+        <ul id="menu" class="nav__links 
+          u-box--pall w-screen h-screen v-flex flex-col ">
           <li class="nav__link"><a href="#">FEATURE</a></li>
           <li class="nav__link"><a href="#">PRICING</a></li>
           <li class="nav__link"><a href="#">CONTACT</a></li>
-          <li class="nav__link"><a href="#">LOGIN</a></li>
+          
+          <li class="nav__link"><button class="btn btn--mobile-menu" href="#">LOGIN</button></li>
+
+          <li class="nav__icons 
+            a-self-end  v-flex j-content-center">
+            <a href="#"><i class="fab fa-facebook u-icon"></a>
+            <a href="#"><i class="fab fa-twitter u-icon"></a>
+
+          </li>
         </ul>
       </nav>
 

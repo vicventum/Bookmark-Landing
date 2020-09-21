@@ -197,19 +197,21 @@ module.hot.accept(reloadCSS);
 },{"../vendor/v-grid.min.css":"app/vendor/v-grid.min.css","_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"app/vendor/hamburger-config.js":[function(require,module,exports) {
 // Look for .hamburger
 var hamburger = document.getElementById("iconHamburger"),
-    header = document.getElementById('header'),
-    // body = document.getElementById('body'),
-links = document.querySelectorAll('.nav__link'); // On click
+    menu = document.getElementById('menu'),
+    body = document.getElementById('body'),
+    links = document.querySelectorAll('.nav__link'); // On click
 
 hamburger.addEventListener("click", function () {
   // Toggle class "is-active"
   hamburger.classList.toggle("is-active");
-  body.classList.toggle("no-scroll"); // header.classList.toggle("open");
+  body.classList.toggle("no-scroll");
+  menu.classList.toggle("open");
 });
 links.forEach(function (link) {
   link.addEventListener('click', function () {
     hamburger.classList.remove("is-active");
-    body.classList.remove("no-scroll"); // header.classList.remove("open");
+    body.classList.remove("no-scroll");
+    menu.classList.remove("open");
   });
 });
 },{}],"app/js/app.js":[function(require,module,exports) {
@@ -250,7 +252,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52938" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50113" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
