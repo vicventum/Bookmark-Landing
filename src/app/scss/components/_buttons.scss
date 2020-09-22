@@ -4,7 +4,7 @@
   font-weight: $fw-xbold;
   text-transform: capitalize;
   // letter-spacing: 1px;
-  padding: 1.2rem;
+  padding: 1rem;
 
   border: 2.5px solid;
   border-color: var(--primary-blue);
@@ -38,6 +38,8 @@
     color: $light;
     font-weight: $fw-bold;
     letter-spacing: 2px;
+    border-color: var(--light);
+    background-color: transparent;
 
     @extend .u-depth-3;
 

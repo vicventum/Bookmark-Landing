@@ -12,6 +12,12 @@
 @import "../vendor/v-grid.min.css";
 // --- Materialize
 // @import "../../../node_modules/materialize-css/dist/css/materialize.min.css";
+@import "../../../node_modules/materialize-css/sass/components/color-variables";
+@import "../../../node_modules/materialize-css/sass/components/color-classes";
+@import "../../../node_modules/materialize-css/sass/components/variables";
+// @import "../../../node_modules/materialize-css/sass/components/global";
+@import "../../../node_modules/materialize-css/sass/components/grid";
+@import "../../../node_modules/materialize-css/sass/components/tabs";
 
 
 
@@ -23,6 +29,7 @@
 // components
 @import "components/buttons";
 @import "components/slide";
+@import "components/tabs";
 
 // layout
 @import "layout/header";

@@ -1,0 +1,16 @@
+.tabs {
+
+  // Reset de Materialize
+  @include media('<tablet') {
+    height: 15rem;
+    overflow-y: initial;
+    margin-bottom: 4rem;
+  }
+
+  .tab {
+    @include media('<tablet') {
+      border-bottom: 1px solid $gray-blue;
+    }
+  }
+
+}
