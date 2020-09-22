@@ -26,19 +26,17 @@ body {
 
     overflow-x: hidden;
 }
-h1,h2,h3 {color: var(--dark-blue);}
-h1, h2 {
+
+h1, h2, h3 {
     // margin: 0;
     font-weight: $fw-xbold;
     line-height: var(--lh-title);
     margin-bottom: $body-size;
+    color: var(--dark-blue);
 }
 h1 {font-size: $h1;}
 h2 {font-size: $h2;}
-h3 {
-    font-size: $h3;
-    font-weight: $fw-regular
-}
+h3 {font-size: $h3;}
 p {
     font-family: $primary-font;
     font-weight: $fw-regular;

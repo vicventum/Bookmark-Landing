@@ -1,0 +1,24 @@
+.cards {
+  margin-top: 2.5rem;
+}
+.card {
+  --size: 2.5rem;
+  border-radius: $border-radius;
+
+  &__desc {
+    padding: var(--size);
+  }
+  &__logo {
+    width: 80%;
+    margin: var(--size) auto;
+  }
+  &__subtitle {
+    margin-top: -.5rem;
+  }
+
+  &__btn {
+    margin: var(--size);
+    width: calc(100% - (var(--size) * 2));
+    text-align: center;
+  } 
+}

@@ -65,13 +65,10 @@ body {
 }
 
 h1, h2, h3 {
-  color: var(--dark-blue);
-}
-
-h1, h2 {
   font-weight: var(--fw-xbold);
   line-height: var(--lh-title);
   margin-bottom: var(--body-size);
+  color: var(--dark-blue);
 }
 
 h1 {
@@ -84,7 +81,6 @@ h2 {
 
 h3 {
   font-size: var(--h3);
-  font-weight: var(--fw-regular);
 }
 
 p {
@@ -3545,6 +3541,30 @@ li {
   }
 }
 
+.cards {
+  margin-top: 2.5rem;
+}
+
+.card {
+  --size: 2.5rem;
+  border-radius: var(--border-radius);
+}
+.card__desc {
+  padding: var(--size);
+}
+.card__logo {
+  width: 80%;
+  margin: var(--size) auto;
+}
+.card__subtitle {
+  margin-top: -0.5rem;
+}
+.card__btn {
+  margin: var(--size);
+  width: calc(100% - (var(--size) * 2));
+  text-align: center;
+}
+
 .header {
   position: relative;
 }
@@ -3627,7 +3647,7 @@ li {
 }
 
 @media (min-width: 768px) {
-  .features__text {
+  .features__text, .extensions__text {
     margin: 0 auto;
   }
 }

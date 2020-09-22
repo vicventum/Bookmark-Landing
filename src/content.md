@@ -35,17 +35,17 @@ No need to trawl through all of your bookmarks.
 
 More Info -->
 
-Share your bookmarks
+<!-- Share your bookmarks
 
 Easily share your bookmarks and collections with others. Create a shareable 
 link that you can send at the click of a button.
 
-More Info
+More Info -->
 
-Download the extension
+<!-- Download the extension
 
 We’ve got more browsers in the pipeline. Please do let us know if you’ve 
-got a favourite you’d like us to prioritize.
+got a favourite you’d like us to prioritize. -->
 
 Add to Chrome
 Minimum version 62
