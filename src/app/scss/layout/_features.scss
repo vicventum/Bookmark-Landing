@@ -1,0 +1,8 @@
+.features {
+
+  &__text {
+    @include media('>=tablet') {
+      margin: 0 auto;
+    }
+  }
+}

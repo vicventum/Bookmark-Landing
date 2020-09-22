@@ -27,6 +27,7 @@
 @media (min-width: 768px) {
   :root {
     --h1: 4.8rem;
+    --h2: 3.1rem;
     --lh-title: 1.2;
     --body-size: 1.7rem;
     --boton-size: 1.1rem;
@@ -3623,6 +3624,12 @@ li {
   bottom: 7%;
   -ms-flex-item-align: center;
       align-self: center;
+}
+
+@media (min-width: 768px) {
+  .features__text {
+    margin: 0 auto;
+  }
 }
 
 /*# sourceMappingURL=/src.e31bb0bc.css.map */
