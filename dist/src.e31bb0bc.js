@@ -2320,6 +2320,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   }
 })(cash, M.anime);
 },{"./component":"../node_modules/materialize-css/js/component.js"}],"app/vendor/materialize-config.js":[function(require,module,exports) {
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
+
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -2332,21 +2334,54 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToAr
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-var collapsibleItems = _toConsumableArray(document.querySelectorAll('ul.collapsible li'));
+var collapsibleIcons = _toConsumableArray(document.querySelectorAll('.collapsible-icons'));
 
-var icon;
-var index = "none";
-collapsibleItems.forEach(function (el) {
-  el.addEventListener('click', activeItem);
-});
+var index; // const collapsibleItems = [...(document.querySelectorAll('ul.collapsible li'))]
+// let icon
+// let index = "none"
+// collapsibleItems.forEach(el => {
+//   el.addEventListener('click', activeItem)
+// });
+
 M.Tabs.init(document.querySelectorAll('.tabs'), {}); // console.log(collapsibleItems);
 
 M.Collapsible.init(document.getElementById('collapsible'), {
-  onOpenStart: function onOpenStart() {// Collapsible Instance
+  onOpenStart: function onOpenStart() {
+    setTimeout(function () {
+      // Collapsible Instance
+      var collapsibleItems = _toConsumableArray(document.querySelectorAll('ul.collapsible li'));
+
+      var i = 0;
+
+      var _iterator = _createForOfIteratorHelper(collapsibleItems),
+          _step;
+
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var el = _step.value;
+
+          if (el.classList.contains("active")) {
+            index = i;
+          }
+
+          i++;
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+
+      console.log(index);
+      transformArrow(index, true);
+    }, 0);
   },
+  // onCloseStart: () => {
+  // icon.style.color = 'hsl(231, 69%, 60%)'
+  // icon.innerHTML = '▼'
+  // }
   onCloseStart: function onCloseStart() {
-    icon.style.color = 'hsl(231, 69%, 60%)';
-    icon.innerHTML = '▼';
+    transformArrow(index, false);
   }
 });
 
@@ -2356,6 +2391,16 @@ function activeItem(e) {
   icon.innerHTML = '▲';
   console.log(e);
   console.log(e.target.firstElementChild);
+}
+
+function transformArrow(i, mode) {
+  if (mode) {
+    collapsibleIcons[i].style.transform = 'rotate(180deg)';
+    collapsibleIcons[i].style.color = 'hsl(0, 94%, 66%)';
+  } else {
+    collapsibleIcons[i].style.transform = 'rotate(0deg)';
+    collapsibleIcons[i].style.color = 'hsl(231, 69%, 60%)';
+  }
 }
 },{}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;

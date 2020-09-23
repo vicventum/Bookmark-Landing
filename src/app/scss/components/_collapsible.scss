@@ -1,7 +1,16 @@
 .collapsible {
   margin: 0 auto;
 
+  .collapsible-header {
+    transition: color .2s ease-in-out;
+
+    &:hover {
+      color: var(--primary-red);
+    }
+  }
+
   i {
     color: var(--primary-blue);
+    transition: transform .3s ease-out;
   }
 }

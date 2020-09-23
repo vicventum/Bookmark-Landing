@@ -3693,8 +3693,21 @@ li {
 .collapsible {
   margin: 0 auto;
 }
+.collapsible .collapsible-header {
+  -webkit-transition: color 0.2s ease-in-out;
+  -o-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+}
+.collapsible .collapsible-header:hover {
+  color: var(--primary-red);
+}
 .collapsible i {
   color: var(--primary-blue);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  -o-transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
 }
 
 .header {
