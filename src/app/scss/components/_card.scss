@@ -1,9 +1,28 @@
 .cards {
   margin-top: 2.5rem;
+
+  $var: 0;
+  @for $var from 0 to 3 {
+    .card:nth-child(#{$var + 1}) {
+
+      margin-top: #{$var * 5}rem;    
+      $var: $var + 1; 
+    }
+  }
 }
 .card {
   --size: 2.5rem;
-  border-radius: $border-radius;
+  border-radius: 1.5rem;
+  box-shadow: 0px 10px 10px -6px rgba(0, 0, 0, .5);
+
+  transition-property: transform, box-shadow;
+  transition-duration: .3s;
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+
+  &:hover {
+    transform: scale(1.04);
+    box-shadow: 0px 15px 15px -1px rgba(0, 0, 0, .5);
+  }
 
   &__desc {
     padding: var(--size);
