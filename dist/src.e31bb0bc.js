@@ -2023,8 +2023,340 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     M.initializeJqueryWrapper(Tabs, 'tabs', 'M_Tabs');
   }
 })(cash, M.anime);
+},{"./component":"../node_modules/materialize-css/js/component.js"}],"../node_modules/materialize-css/js/collapsible.js":[function(require,module,exports) {
+"use strict";
+
+var _component = _interopRequireDefault(require("./component"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(function ($, anim) {
+  'use strict';
+
+  let _defaults = {
+    accordion: true,
+    onOpenStart: undefined,
+    onOpenEnd: undefined,
+    onCloseStart: undefined,
+    onCloseEnd: undefined,
+    inDuration: 300,
+    outDuration: 300
+  };
+  /**
+   * @class
+   *
+   */
+
+  class Collapsible extends _component.default {
+    /**
+     * Construct Collapsible instance
+     * @constructor
+     * @param {Element} el
+     * @param {Object} options
+     */
+    constructor(el, options) {
+      super(Collapsible, el, options);
+      this.el.M_Collapsible = this;
+      /**
+       * Options for the collapsible
+       * @member Collapsible#options
+       * @prop {Boolean} [accordion=false] - Type of the collapsible
+       * @prop {Function} onOpenStart - Callback function called before collapsible is opened
+       * @prop {Function} onOpenEnd - Callback function called after collapsible is opened
+       * @prop {Function} onCloseStart - Callback function called before collapsible is closed
+       * @prop {Function} onCloseEnd - Callback function called after collapsible is closed
+       * @prop {Number} inDuration - Transition in duration in milliseconds.
+       * @prop {Number} outDuration - Transition duration in milliseconds.
+       */
+
+      this.options = $.extend({}, Collapsible.defaults, options); // Setup tab indices
+
+      this.$headers = this.$el.children('li').children('.collapsible-header');
+      this.$headers.attr('tabindex', 0);
+
+      this._setupEventHandlers(); // Open first active
+
+
+      let $activeBodies = this.$el.children('li.active').children('.collapsible-body');
+
+      if (this.options.accordion) {
+        // Handle Accordion
+        $activeBodies.first().css('display', 'block');
+      } else {
+        // Handle Expandables
+        $activeBodies.css('display', 'block');
+      }
+    }
+
+    static get defaults() {
+      return _defaults;
+    }
+
+    static init(els, options) {
+      return super.init(this, els, options);
+    }
+    /**
+     * Get Instance
+     */
+
+
+    static getInstance(el) {
+      let domElem = !!el.jquery ? el[0] : el;
+      return domElem.M_Collapsible;
+    }
+    /**
+     * Teardown component
+     */
+
+
+    destroy() {
+      this._removeEventHandlers();
+
+      this.el.M_Collapsible = undefined;
+    }
+    /**
+     * Setup Event Handlers
+     */
+
+
+    _setupEventHandlers() {
+      this._handleCollapsibleClickBound = this._handleCollapsibleClick.bind(this);
+      this._handleCollapsibleKeydownBound = this._handleCollapsibleKeydown.bind(this);
+      this.el.addEventListener('click', this._handleCollapsibleClickBound);
+      this.$headers.each(header => {
+        header.addEventListener('keydown', this._handleCollapsibleKeydownBound);
+      });
+    }
+    /**
+     * Remove Event Handlers
+     */
+
+
+    _removeEventHandlers() {
+      this.el.removeEventListener('click', this._handleCollapsibleClickBound);
+      this.$headers.each(header => {
+        header.removeEventListener('keydown', this._handleCollapsibleKeydownBound);
+      });
+    }
+    /**
+     * Handle Collapsible Click
+     * @param {Event} e
+     */
+
+
+    _handleCollapsibleClick(e) {
+      let $header = $(e.target).closest('.collapsible-header');
+
+      if (e.target && $header.length) {
+        let $collapsible = $header.closest('.collapsible');
+
+        if ($collapsible[0] === this.el) {
+          let $collapsibleLi = $header.closest('li');
+          let $collapsibleLis = $collapsible.children('li');
+          let isActive = $collapsibleLi[0].classList.contains('active');
+          let index = $collapsibleLis.index($collapsibleLi);
+
+          if (isActive) {
+            this.close(index);
+          } else {
+            this.open(index);
+          }
+        }
+      }
+    }
+    /**
+     * Handle Collapsible Keydown
+     * @param {Event} e
+     */
+
+
+    _handleCollapsibleKeydown(e) {
+      if (e.keyCode === 13) {
+        this._handleCollapsibleClickBound(e);
+      }
+    }
+    /**
+     * Animate in collapsible slide
+     * @param {Number} index - 0th index of slide
+     */
+
+
+    _animateIn(index) {
+      let $collapsibleLi = this.$el.children('li').eq(index);
+
+      if ($collapsibleLi.length) {
+        let $body = $collapsibleLi.children('.collapsible-body');
+        anim.remove($body[0]);
+        $body.css({
+          display: 'block',
+          overflow: 'hidden',
+          height: 0,
+          paddingTop: '',
+          paddingBottom: ''
+        });
+        let pTop = $body.css('padding-top');
+        let pBottom = $body.css('padding-bottom');
+        let finalHeight = $body[0].scrollHeight;
+        $body.css({
+          paddingTop: 0,
+          paddingBottom: 0
+        });
+        anim({
+          targets: $body[0],
+          height: finalHeight,
+          paddingTop: pTop,
+          paddingBottom: pBottom,
+          duration: this.options.inDuration,
+          easing: 'easeInOutCubic',
+          complete: anim => {
+            $body.css({
+              overflow: '',
+              paddingTop: '',
+              paddingBottom: '',
+              height: ''
+            }); // onOpenEnd callback
+
+            if (typeof this.options.onOpenEnd === 'function') {
+              this.options.onOpenEnd.call(this, $collapsibleLi[0]);
+            }
+          }
+        });
+      }
+    }
+    /**
+     * Animate out collapsible slide
+     * @param {Number} index - 0th index of slide to open
+     */
+
+
+    _animateOut(index) {
+      let $collapsibleLi = this.$el.children('li').eq(index);
+
+      if ($collapsibleLi.length) {
+        let $body = $collapsibleLi.children('.collapsible-body');
+        anim.remove($body[0]);
+        $body.css('overflow', 'hidden');
+        anim({
+          targets: $body[0],
+          height: 0,
+          paddingTop: 0,
+          paddingBottom: 0,
+          duration: this.options.outDuration,
+          easing: 'easeInOutCubic',
+          complete: () => {
+            $body.css({
+              height: '',
+              overflow: '',
+              padding: '',
+              display: ''
+            }); // onCloseEnd callback
+
+            if (typeof this.options.onCloseEnd === 'function') {
+              this.options.onCloseEnd.call(this, $collapsibleLi[0]);
+            }
+          }
+        });
+      }
+    }
+    /**
+     * Open Collapsible
+     * @param {Number} index - 0th index of slide
+     */
+
+
+    open(index) {
+      let $collapsibleLi = this.$el.children('li').eq(index);
+
+      if ($collapsibleLi.length && !$collapsibleLi[0].classList.contains('active')) {
+        // onOpenStart callback
+        if (typeof this.options.onOpenStart === 'function') {
+          this.options.onOpenStart.call(this, $collapsibleLi[0]);
+        } // Handle accordion behavior
+
+
+        if (this.options.accordion) {
+          let $collapsibleLis = this.$el.children('li');
+          let $activeLis = this.$el.children('li.active');
+          $activeLis.each(el => {
+            let index = $collapsibleLis.index($(el));
+            this.close(index);
+          });
+        } // Animate in
+
+
+        $collapsibleLi[0].classList.add('active');
+
+        this._animateIn(index);
+      }
+    }
+    /**
+     * Close Collapsible
+     * @param {Number} index - 0th index of slide
+     */
+
+
+    close(index) {
+      let $collapsibleLi = this.$el.children('li').eq(index);
+
+      if ($collapsibleLi.length && $collapsibleLi[0].classList.contains('active')) {
+        // onCloseStart callback
+        if (typeof this.options.onCloseStart === 'function') {
+          this.options.onCloseStart.call(this, $collapsibleLi[0]);
+        } // Animate out
+
+
+        $collapsibleLi[0].classList.remove('active');
+
+        this._animateOut(index);
+      }
+    }
+
+  }
+
+  M.Collapsible = Collapsible;
+
+  if (M.jQueryLoaded) {
+    M.initializeJqueryWrapper(Collapsible, 'collapsible', 'M_Collapsible');
+  }
+})(cash, M.anime);
 },{"./component":"../node_modules/materialize-css/js/component.js"}],"app/vendor/materialize-config.js":[function(require,module,exports) {
-M.Tabs.init(document.querySelectorAll('.tabs'), {});
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+var collapsibleItems = _toConsumableArray(document.querySelectorAll('ul.collapsible li'));
+
+var icon;
+var index = "none";
+collapsibleItems.forEach(function (el) {
+  el.addEventListener('click', activeItem);
+});
+M.Tabs.init(document.querySelectorAll('.tabs'), {}); // console.log(collapsibleItems);
+
+M.Collapsible.init(document.getElementById('collapsible'), {
+  onOpenStart: function onOpenStart() {// Collapsible Instance
+  },
+  onCloseStart: function onCloseStart() {
+    icon.style.color = 'hsl(231, 69%, 60%)';
+    icon.innerHTML = '▼';
+  }
+});
+
+function activeItem(e) {
+  icon = e.target.firstElementChild;
+  icon.style.color = 'hsl(0, 94%, 66%)';
+  icon.innerHTML = '▲';
+  console.log(e);
+  console.log(e.target.firstElementChild);
+}
 },{}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
@@ -2135,6 +2467,8 @@ require("../node_modules/materialize-css/js/anime.min");
 
 require("../node_modules/materialize-css/js/tabs");
 
+require("../node_modules/materialize-css/js/collapsible");
+
 require("./app/vendor/materialize-config");
 
 require("./app/scss/main.scss");
@@ -2142,7 +2476,7 @@ require("./app/scss/main.scss");
 require("./app/vendor/hamburger-config");
 
 require("./app/js/app");
-},{"../node_modules/materialize-css/js/cash":"../node_modules/materialize-css/js/cash.js","../node_modules/materialize-css/js/global":"../node_modules/materialize-css/js/global.js","../node_modules/materialize-css/js/anime.min":"../node_modules/materialize-css/js/anime.min.js","../node_modules/materialize-css/js/tabs":"../node_modules/materialize-css/js/tabs.js","./app/vendor/materialize-config":"app/vendor/materialize-config.js","./app/scss/main.scss":"app/scss/main.scss","./app/vendor/hamburger-config":"app/vendor/hamburger-config.js","./app/js/app":"app/js/app.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"../node_modules/materialize-css/js/cash":"../node_modules/materialize-css/js/cash.js","../node_modules/materialize-css/js/global":"../node_modules/materialize-css/js/global.js","../node_modules/materialize-css/js/anime.min":"../node_modules/materialize-css/js/anime.min.js","../node_modules/materialize-css/js/tabs":"../node_modules/materialize-css/js/tabs.js","../node_modules/materialize-css/js/collapsible":"../node_modules/materialize-css/js/collapsible.js","./app/vendor/materialize-config":"app/vendor/materialize-config.js","./app/scss/main.scss":"app/scss/main.scss","./app/vendor/hamburger-config":"app/vendor/hamburger-config.js","./app/js/app":"app/js/app.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -2170,7 +2504,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50595" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61910" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
