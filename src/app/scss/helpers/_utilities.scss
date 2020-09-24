@@ -69,12 +69,17 @@
         margin: 0 2rem;
         color: $light;
         // cursor: pointer;
+        transition: color .2s ease-in-out;
 
         &--small {
             font-size: $size - .4rem;
         }
         &--big {
             font-size: $size + 2rem;
+        }
+
+        &:hover {
+            color: var(--primary-red);
         }
     }
 

@@ -46,9 +46,10 @@
         <ul id="menu" class="nav__links 
           u-box--pall w-screen h-screen v-flex flex-col 
            t:flex-row t:j-content-between t:a-items-center t:w-auto t:h-auto">
-          <li class="nav__link"><a href="#">FEATURE</a></li>
-          <li class="nav__link"><a href="#">PRICING</a></li>
-          <li class="nav__link"><a href="#">CONTACT</a></li>
+          <li class="nav__link"><a href="#features">FEATURES</a></li>
+          <li class="nav__link"><a href="#download">DOWNLOAD</a></li>
+          <li class="nav__link"><a href="#faqs">FAQs</a></li>
+          <li class="nav__link"><a href="#contact">CONTACT</a></li>
 
           <li class="nav__link"><button class="btn btn--mobile-menu" href="#">LOGIN</button></li>
 
@@ -104,7 +105,7 @@
 
 
   <!-- FEATURES -->
-  <section class="features u-box u-box--py">
+  <section id="features" class="features u-box u-box--py">
 
     <!-- Features Description -->
     <div class="features__desc u-text-center">
@@ -127,7 +128,7 @@
       <!-- Slide 1 -->
       <div id="slide1" class="">
         <!-- Slide -->
-        <div class="slide
+        <article class="slide
             v-grid t:grid-cols-2 t:a-items-center t:gap-6 u-box--py">
 
           <!-- img -->
@@ -150,14 +151,14 @@
             <a href="#" class="btn">More Info</a>
           </div>
 
-        </div>
+        </article>
 
       </div>
 
       <!-- Slide 2 -->
       <div id="slide2" class="">
         <!-- Slide -->
-        <div class="slide
+        <article class="slide
             v-grid t:grid-cols-2 t:a-items-center t:gap-6 u-box--py">
 
           <!-- img -->
@@ -179,14 +180,14 @@
 
             <a href="#" class="btn">More Info</a>
           </div>
-        </div>
+        </article>
       </div>
 
       <!-- Slide 3 -->
       <div id="slide3" class="">
 
         <!-- Slide -->
-        <div class="slide
+        <article class="slide
             v-grid t:grid-cols-2 t:a-items-center t:gap-6 u-box--py">
 
           <!-- img -->
@@ -208,7 +209,7 @@
 
             <a href="#" class="btn">More Info</a>
           </div>
-        </div>
+        </article>
 
       </div>
 
@@ -219,7 +220,7 @@
 
 
   <!-- EXTENSIONS -->
-  <section class="extensions u-box">
+  <section id="download" class="extensions u-box">
 
     <!-- Extensions Description -->
     <div class="extensions__desc u-text-center">
@@ -235,7 +236,7 @@
     <div class="cards v-grid t:grid-cols-3 t:a-items-start t:gap-2 l:gap-5 u-box--py">
 
       <!-- Card 1 -->
-      <div class="cards__container card  ">
+      <article class="cards__container card  ">
         <!-- Card Description -->
         <div class="card__desc v-grid j-content-center">
           <img src="/logo-chrome.d56d1fd5.svg" alt="Chrome logo" class="card__logo">
@@ -247,10 +248,10 @@
         <img src="/bg-dots.fd4d2271.svg" alt="dots">
         <!-- Card Boton -->
         <a href="#" class="card__btn btn">Add & Install Extension</a>
-      </div>
+      </article>
 
       <!-- Card 2 -->
-      <div class="cards__container card  ">
+      <article class="cards__container card  ">
         <!-- Card Description -->
         <div class="card__desc v-grid j-content-center">
           <img src="/logo-firefox.dcbf5f0d.svg" alt="firefox logo" class="card__logo">
@@ -262,10 +263,10 @@
         <img src="/bg-dots.fd4d2271.svg" alt="dots">
         <!-- Card Boton -->
         <a href="#" class="card__btn btn">Add & Install Extension</a>
-      </div>
+      </article>
 
       <!-- Card 3 -->
-      <div class="cards__container card  ">
+      <article class="cards__container card  ">
         <!-- Card Description -->
         <div class="card__desc v-grid j-content-center">
           <img src="/logo-opera.6be42750.svg" alt="opera logo" class="card__logo">
@@ -277,13 +278,13 @@
         <img src="/bg-dots.fd4d2271.svg" alt="dots">
         <!-- Card Boton -->
         <a href="#" class="card__btn btn">Add & Install Extension</a>
-      </div>
+      </article>
 
     </div>
   </section>
 
   <!-- QUESTIONS -->
-  <section class="questions u-box u-box--py">
+  <section id="faqs" class="questions u-box u-box--py">
 
     <!-- Questions Description -->
     <div class="questions__desc u-text-center">
@@ -365,7 +366,7 @@
 
 
   <!-- FOOTER -->
-  <footer class="footer">
+  <footer id="contact" class="footer">
     <div class="u-box  u-box--py v-grid gap-2 t:gap-3 j-content-center j-items-center">
       <p class="footer__subtitle">35.00+ ALREADY JOYNED</p>
 
@@ -383,12 +384,13 @@
       <div class="footer__container u-box v-flex flex-col j-content-center
         t:flex-row t:j-content-between">
         <div class="footer__links v-grid a-items-center gap-3
-          t:v-flex t:w-1/2 t:j-content-between">
+          t:v-flex t:w-3/5 t:j-content-between">
           <img class="footer__logo w-1/2 t:w-2/6" src="/logo-bookmark-light.3ffdfca5.svg" alt="Logo Bookmark">
 
-          <a href="#">FEATURES</a>
-          <a href="#">PRICING</a>
-          <a href="#">CONTACT</a>
+          <a href="#features">FEATURES</a>
+          <a href="#download">DOWNLOAD</a>
+          <a href="#faqs">FAQs</a>
+          <a href="#contact">CONTACT</a>
         </div>
 
 

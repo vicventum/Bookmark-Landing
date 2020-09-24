@@ -1,15 +1,22 @@
 .tabs {
+  width: 73%;
+  border-bottom: 1px solid lighten($color: $gray-blue, $amount: 30%) ;
 
   // Reset de Materialize
   @include media('<tablet') {
     height: 15rem;
     overflow-y: initial;
     margin-bottom: 4rem;
+    border-bottom: none;
+
+    .indicator {
+      display: none;
+    }
   }
 
   .tab {
     @include media('<tablet') {
-      border-bottom: 1px solid $gray-blue;
+      border-bottom: 1px solid lighten($color: $gray-blue, $amount: 30%);
     }
   }
 
