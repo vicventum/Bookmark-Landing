@@ -45,6 +45,7 @@ html {
           box-sizing: border-box;
   font-size: 62.5%;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 *,
@@ -3703,11 +3704,18 @@ li {
 }
 .collapsible i {
   color: var(--primary-blue);
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-  transition: -webkit-transform 0.3s ease-out;
-  -o-transition: transform 0.3s ease-out;
-  transition: transform 0.3s ease-out;
-  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  -webkit-transition: color 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  transition: color 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  -o-transition: transform 0.3s ease-out, color 0.3s ease-out;
+  transition: transform 0.3s ease-out, color 0.3s ease-out;
+  transition: transform 0.3s ease-out, color 0.3s ease-out, -webkit-transform 0.3s ease-out;
+}
+
+.transform-arrow {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+  color: var(--primary-red) !important;
 }
 
 .header {

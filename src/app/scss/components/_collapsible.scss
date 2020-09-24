@@ -11,6 +11,11 @@
 
   i {
     color: var(--primary-blue);
-    transition: transform .3s ease-out;
+    transition: transform .3s ease-out, color .3s ease-out;
   }
+}
+
+.transform-arrow {
+  transform: rotate(180deg);
+  color: var(--primary-red)!important;
 }

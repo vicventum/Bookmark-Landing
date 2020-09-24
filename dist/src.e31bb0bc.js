@@ -2336,71 +2336,49 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 var collapsibleIcons = _toConsumableArray(document.querySelectorAll('.collapsible-icons'));
 
-var index; // const collapsibleItems = [...(document.querySelectorAll('ul.collapsible li'))]
-// let icon
-// let index = "none"
-// collapsibleItems.forEach(el => {
-//   el.addEventListener('click', activeItem)
-// });
-
+var index;
 M.Tabs.init(document.querySelectorAll('.tabs'), {}); // console.log(collapsibleItems);
 
 M.Collapsible.init(document.getElementById('collapsible'), {
-  onOpenStart: function onOpenStart() {
-    setTimeout(function () {
-      // Collapsible Instance
-      var collapsibleItems = _toConsumableArray(document.querySelectorAll('ul.collapsible li'));
-
-      var i = 0;
-
-      var _iterator = _createForOfIteratorHelper(collapsibleItems),
-          _step;
-
-      try {
-        for (_iterator.s(); !(_step = _iterator.n()).done;) {
-          var el = _step.value;
-
-          if (el.classList.contains("active")) {
-            index = i;
-          }
-
-          i++;
-        }
-      } catch (err) {
-        _iterator.e(err);
-      } finally {
-        _iterator.f();
-      }
-
-      console.log(index);
-      transformArrow(index, true);
-    }, 0);
-  },
-  // onCloseStart: () => {
-  // icon.style.color = 'hsl(231, 69%, 60%)'
-  // icon.innerHTML = '▼'
-  // }
+  onOpenStart: getItem,
   onCloseStart: function onCloseStart() {
-    transformArrow(index, false);
+    return transformArrow(index);
   }
 });
 
-function activeItem(e) {
-  icon = e.target.firstElementChild;
-  icon.style.color = 'hsl(0, 94%, 66%)';
-  icon.innerHTML = '▲';
-  console.log(e);
-  console.log(e.target.firstElementChild);
+function getItem() {
+  // IMPORTANT: Se coloca toda la funcion dentro de un setTimeout() para dar chance a que se coloque la clase "active"
+  setTimeout(function () {
+    // Collapsible Instance
+    var collapsibleItems = _toConsumableArray(document.querySelectorAll('ul.collapsible li'));
+
+    var i = 0;
+
+    var _iterator = _createForOfIteratorHelper(collapsibleItems),
+        _step;
+
+    try {
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        var el = _step.value;
+
+        if (el.classList.contains("active")) {
+          index = i;
+        }
+
+        i++;
+      }
+    } catch (err) {
+      _iterator.e(err);
+    } finally {
+      _iterator.f();
+    }
+
+    transformArrow(index);
+  }, 0);
 }
 
-function transformArrow(i, mode) {
-  if (mode) {
-    collapsibleIcons[i].style.transform = 'rotate(180deg)';
-    collapsibleIcons[i].style.color = 'hsl(0, 94%, 66%)';
-  } else {
-    collapsibleIcons[i].style.transform = 'rotate(0deg)';
-    collapsibleIcons[i].style.color = 'hsl(231, 69%, 60%)';
-  }
+function transformArrow(i) {
+  collapsibleIcons[i].classList.toggle('transform-arrow');
 }
 },{}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
