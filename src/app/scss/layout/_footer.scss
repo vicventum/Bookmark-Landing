@@ -5,7 +5,6 @@
 
   @include media('<tablet') {
     padding-top: 3rem;
-    padding-bottom: 3rem;
   }
   
   &__subtitle {
@@ -41,5 +40,26 @@
       margin-top: 0;
       height: 100%;
     }
+  }
+
+
+  &__bottom {
+    background-color: var(--dark-blue);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    
+    a {
+      color: var(--light);
+      font-size: $body-size;
+      letter-spacing: .2rem;
+    }
+  }
+  &__logo {
+    margin: 0 auto;
+  }
+
+  &__social {
+    margin: 5rem auto 0 auto;
+    // font-size: 3rem;
   }
 }

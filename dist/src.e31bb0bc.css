@@ -3834,7 +3834,6 @@ li {
 @media (max-width: 767px) {
   .footer {
     padding-top: 3rem;
-    padding-bottom: 3rem;
   }
 }
 .footer__subtitle {
@@ -3869,6 +3868,22 @@ li {
     margin-top: 0;
     height: 100%;
   }
+}
+.footer__bottom {
+  background-color: var(--dark-blue);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.footer__bottom a {
+  color: var(--light);
+  font-size: var(--body-size);
+  letter-spacing: 0.2rem;
+}
+.footer__logo {
+  margin: 0 auto;
+}
+.footer__social {
+  margin: 5rem auto 0 auto;
 }
 
 /*# sourceMappingURL=/src.e31bb0bc.css.map */
