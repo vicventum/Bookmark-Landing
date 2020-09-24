@@ -92,12 +92,12 @@ sollicitudin ex et ultricies bibendum. -->
 <!-- What about other Chromium browsers? -->
 
 <!-- Answer 4 -->
-Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam 
-vitae neque eget nisl gravida pellentesque non ut velit.
+<!-- Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam 
+vitae neque eget nisl gravida pellentesque non ut velit. -->
 
-More Info
+<!-- More Info
 
-35,000+ already joined
+35,000+ already joined -->
 
 Stay up-to-date with what we’re doing
 

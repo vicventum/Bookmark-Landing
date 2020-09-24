@@ -3553,6 +3553,15 @@ li {
   border-color: var(--gray-dark);
   color: var(--gray-dark);
 }
+.btn--red {
+  background-color: var(--primary-red);
+  border-color: var(--primary-red);
+}
+.btn--red:hover {
+  background-color: transparent;
+  color: var(--primary-red);
+  border-color: var(--primary-red);
+}
 
 .slide__img {
   position: relative;
@@ -3815,6 +3824,51 @@ li {
 }
 .questions__btn {
   margin-top: clamp(3rem, 3vw, 4.5rem);
+}
+
+.footer {
+  background-color: var(--primary-blue);
+  color: var(--light);
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .footer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+.footer__subtitle {
+  font-size: 1.5rem;
+  letter-spacing: 0.4rem;
+  font-weight: var(--fw-bold);
+}
+.footer__title {
+  color: inherit;
+}
+.footer__input {
+  padding: 2rem;
+  font-size: var(--body-size);
+  border-radius: var(--border-radius);
+  border: none;
+}
+@media (min-width: 768px) {
+  .footer__input {
+    padding: 1.7rem;
+  }
+}
+.footer__btn {
+  margin-top: 1.5rem;
+  --size: 1.5rem;
+  padding-top: var(--size);
+  padding-bottom: var(--size);
+  font-size: var(--body-size);
+  height: 100%;
+}
+@media (min-width: 768px) {
+  .footer__btn {
+    margin-top: 0;
+    height: 100%;
+  }
 }
 
 /*# sourceMappingURL=/src.e31bb0bc.css.map */

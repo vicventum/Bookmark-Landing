@@ -71,4 +71,15 @@
     }
   }
 
+  &--red {
+    background-color: var(--primary-red);
+    border-color: var(--primary-red);
+
+    &:hover {
+      background-color: transparent;
+      color: var(--primary-red);
+      border-color: var(--primary-red);
+    }
+  }
+
 }

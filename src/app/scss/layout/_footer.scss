@@ -1,0 +1,45 @@
+.footer {
+  background-color: var(--primary-blue);
+  color: var(--light);
+  text-align: center;
+
+  @include media('<tablet') {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  &__subtitle {
+    font-size: 1.5rem;
+    letter-spacing: .4rem;
+    font-weight: $fw-bold;
+  }
+  &__title {
+    color: inherit;
+  }
+  
+  &__input {
+    padding: 2rem;
+    font-size: $body-size;
+    border-radius: $border-radius;
+    border: none;
+
+    @include media('>=tablet') {
+      padding: 1.7rem;
+    }
+  }
+
+  &__btn {
+    margin-top: 1.5rem;
+    --size: 1.5rem;
+    padding-top: var(--size);
+    padding-bottom: var(--size);
+    // line-height: ;
+    font-size: $body-size;
+    height: 100%;
+
+    @include media('>=tablet') {
+      margin-top: 0;
+      height: 100%;
+    }
+  }
+}
