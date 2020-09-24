@@ -3,19 +3,18 @@
   color: var(--light);
   text-align: center;
 
-  @include media('<tablet') {
-    padding-top: 3rem;
-  }
   
+
   &__subtitle {
     font-size: 1.5rem;
     letter-spacing: .4rem;
     font-weight: $fw-bold;
   }
+
   &__title {
     color: inherit;
   }
-  
+
   &__input {
     padding: 2rem;
     font-size: $body-size;
@@ -43,23 +42,66 @@
   }
 
 
+  // --------- footer__botom
+  &__container {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+  }
   &__bottom {
     background-color: var(--dark-blue);
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    
+    // padding-top: 2rem;
+    // padding-bottom: 2rem;
+
+    @include media('>=tablet') {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
     a {
       color: var(--light);
       font-size: $body-size;
       letter-spacing: .2rem;
+
+      @include media('>=tablet') {
+        font-size: $link-size;
+      }
     }
   }
+
   &__logo {
     margin: 0 auto;
+
+    @include media('>=tablet') {
+      margin-left: initial;
+      margin-right: 2rem;
+    }
   }
 
   &__social {
     margin: 5rem auto 0 auto;
-    // font-size: 3rem;
+
+    @include media('>=tablet') {
+      margin-top: 0;
+      margin-right: 0;
+    }
+  }
+
+  &__credits {
+    background-color: var(--dark-blue);
+    font-size: $body-size;
+    padding: 2rem;
+    padding-top: 0;
+
+    @include media('>=tablet') {
+      font-size: $link-size;
+    }
+
+    a {
+      text-transform: capitalize;
+      font-size: inherit;
+      color: var(--primary-red);
+      letter-spacing: normal;
+    }
   }
 }

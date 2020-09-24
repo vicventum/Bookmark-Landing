@@ -373,27 +373,37 @@
 
       <form class="footer__form v-flex flex-wrap t:flex-nowrap a-items-stretch j-content-between
           w-10/12">
-        <input type="text" class="footer__input w-full t:w-2/3" placeholder="Enter your email address">
+        <input type="email" class="footer__input w-full t:w-2/3" placeholder="Enter your email address">
 
         <input class="footer__btn btn btn--red w-full t:w-auto" type="submit" value="Contact Us">
       </form>
     </div>
 
-    <div class="footer__bottom">
-      <div class="u-box u-box--py v-flex flex-col j-content-center">
-        <div class="footer__links v-grid a-items-center gap-3">
-          <img class="footer__logo w-1/2" src="/logo-bookmark-light.3ffdfca5.svg" alt="Logo Bookmark">
+    <div class="footer__bottom u-box--py ">
+      <div class="footer__container u-box v-flex flex-col j-content-center
+        t:flex-row t:j-content-between">
+        <div class="footer__links v-grid a-items-center gap-3
+          t:v-flex t:w-1/2 t:j-content-between">
+          <img class="footer__logo w-1/2 t:w-2/6" src="/logo-bookmark-light.3ffdfca5.svg" alt="Logo Bookmark">
 
           <a href="#">FEATURES</a>
           <a href="#">PRICING</a>
           <a href="#">CONTACT</a>
         </div>
 
-        <div class="footer__social v-flex j-content-evenly w-1/2">
+
+        <div class="footer__social v-flex j-content-evenly w-1/2 t:w-1/12">
           <a href="#"><i class="fab fa-facebook u-icon"></i></a>
           <a href="#"><i class="fab fa-twitter u-icon"></i></a>
         </div>
       </div>
+
+      <!-- <div class="w-full footer__credits">  -->
+        <p class="u-box w-full footer__credits ">
+          Coded by <a href="#"><strong>Víctor Álvarez</strong></a> 
+          | Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        </p>
+      <!-- </div> -->
     </div>
   </footer>
 
