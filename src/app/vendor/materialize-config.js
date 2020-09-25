@@ -2,7 +2,7 @@ const collapsibleIcons = [...(document.querySelectorAll('.collapsible-icons'))]
 let index
 
 M.Tabs.init(document.querySelectorAll('.tabs'), {
-
+  swipeable : false
 });
 
 // console.log(collapsibleItems);

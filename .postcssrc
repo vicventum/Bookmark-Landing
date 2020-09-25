@@ -3,6 +3,10 @@
   "plugins": {
     "autoprefixer": {
       "grid": true
-    }
+    },
+      "@fullhuman/postcss-purgecss": {
+        "content": ["./dist/*.html","./dist/*.js", "https://kit-free.fontawesome.com/releases/latest/css/free.min.css"],
+        "css": ["./dist/*.css"]
+      }
   }
 }

@@ -2337,7 +2337,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 var collapsibleIcons = _toConsumableArray(document.querySelectorAll('.collapsible-icons'));
 
 var index;
-M.Tabs.init(document.querySelectorAll('.tabs'), {}); // console.log(collapsibleItems);
+M.Tabs.init(document.querySelectorAll('.tabs'), {
+  swipeable: false
+}); // console.log(collapsibleItems);
 
 M.Collapsible.init(document.getElementById('collapsible'), {
   onOpenStart: getItem,
@@ -2527,7 +2529,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58537" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64102" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
