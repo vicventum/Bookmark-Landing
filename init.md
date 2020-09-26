@@ -11,3 +11,5 @@
     Esto iniciara el servidor de **Parcel**
 5. ### **Correr el script `git init`**
     Esto iniciara el repositorio de **git**
+
+>    purgecss --css main.css --content *.html *.js -o res.css

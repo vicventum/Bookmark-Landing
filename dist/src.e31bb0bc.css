@@ -529,8 +529,8 @@ li {
   }
 }
 .btn--gray {
-  background-color: transparent;
-  border-color: transparent;
+  background-color: var(--light);
+  border-color: var(--light);
   color: var(--gray-dark);
 }
 .btn--gray:hover {
@@ -659,6 +659,7 @@ li {
 .card {
   --size: 2.5rem;
   border-radius: 1.5rem;
+  background-color: var(--light);
   -webkit-box-shadow: 0px 10px 10px -6px rgba(0, 0, 0, 0.5);
           box-shadow: 0px 10px 10px -6px rgba(0, 0, 0, 0.5);
   -webkit-transition-property: -webkit-transform, -webkit-box-shadow;
@@ -673,12 +674,14 @@ li {
        -o-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
           transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 }
-.card:hover {
-  -webkit-transform: scale(1.04);
-      -ms-transform: scale(1.04);
-          transform: scale(1.04);
-  -webkit-box-shadow: 0px 15px 15px -1px rgba(0, 0, 0, 0.5);
-          box-shadow: 0px 15px 15px -1px rgba(0, 0, 0, 0.5);
+@media (min-width: 768px) {
+  .card:hover {
+    -webkit-transform: scale(1.04);
+        -ms-transform: scale(1.04);
+            transform: scale(1.04);
+    -webkit-box-shadow: 0px 15px 15px -1px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 15px 15px -1px rgba(0, 0, 0, 0.5);
+  }
 }
 .card__desc {
   padding: var(--size);
@@ -731,10 +734,11 @@ li {
 }
 .header .nav__logo, .header .nav__hamburger {
   position: relative;
-  z-index: 1;
+  z-index: 1000;
 }
 .header .nav__links {
   position: absolute;
+  z-index: 100;
   left: 0;
   top: 0;
   padding-top: 9rem;
