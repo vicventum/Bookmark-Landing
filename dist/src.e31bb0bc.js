@@ -2454,12 +2454,17 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"app/scss/main.scss":[function(require,module,exports) {
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"app/vendor/fontello/css/facebook.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"../vendor/v-grid.min.css":"app/vendor/v-grid.min.css","_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"app/vendor/hamburger-config.js":[function(require,module,exports) {
+},{"./..\\font\\facebook.woff2":[["facebook.5a9ee458.woff2","app/vendor/fontello/font/facebook.woff2"],"app/vendor/fontello/font/facebook.woff2"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"app/scss/main.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"../vendor/v-grid.min.css":"app/vendor/v-grid.min.css","../vendor/fontello/css/facebook.css":"app/vendor/fontello/css/facebook.css","_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"app/vendor/hamburger-config.js":[function(require,module,exports) {
 // Look for .hamburger
 var hamburger = document.getElementById("iconHamburger"),
     menu = document.getElementById('menu'),
@@ -2529,7 +2534,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62765" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56636" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -27,23 +27,61 @@ body {
     background-color: $light;
 
     overflow-x: hidden;
+
+    // scrollbar-width: thin;
+    // scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+    
+    
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--primary-blue);
+        border-radius: 20px;
+
+        transition: background-color .2s ease-in-out;
+
+        &:hover {
+            background-color: darken($color: $primary-blue, $amount: 2%);
+        }
+    }
 }
 
-h1, h2, h3 {
+
+
+h1,
+h2,
+h3 {
     // margin: 0;
     font-weight: $fw-xbold;
     line-height: var(--lh-title);
     margin-bottom: $body-size;
     color: var(--dark-blue);
 }
-h1 {font-size: $h1;}
-h2 {font-size: $h2;}
-h3 {font-size: $h3;}
+
+h1 {
+    font-size: $h1;
+}
+
+h2 {
+    font-size: $h2;
+}
+
+h3 {
+    font-size: $h3;
+}
+
 p {
     font-family: $primary-font;
     font-weight: $fw-regular;
     line-height: var(--lh-body);
 }
+
 a {
     font-weight: $fw-regular;
     font-size: $link-size;
@@ -55,7 +93,9 @@ a {
     cursor: pointer;
     transition: color .3s ease-in-out;
 
-    &:hover{color: $primary-red;}
+    &:hover {
+        color: $primary-red;
+    }
 }
 
 img {
@@ -63,11 +103,13 @@ img {
     width: 100%;
     height: auto;
 }
+
 ul {
     padding-left: 0;
     margin-top: 0;
     margin-bottom: 0;
 }
+
 li {
     list-style: none;
 }
@@ -75,3 +117,5 @@ li {
 .no-scroll {
     overflow: hidden;
 }
+
+
