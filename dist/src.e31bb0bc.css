@@ -118,6 +118,8 @@ body {
   color: var(--gray-blue);
   background-color: rgba(255, 255, 255, 0.9);
   overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-blue) transparent;
 }
 body::-webkit-scrollbar {
   width: 10px;
