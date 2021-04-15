@@ -33,7 +33,6 @@
     padding-bottom: var(--size);
     // line-height: ;
     font-size: $body-size;
-    height: 100%;
 
     @include media('>=tablet') {
       margin-top: 0;

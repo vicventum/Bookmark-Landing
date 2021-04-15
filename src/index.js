@@ -11,7 +11,10 @@ import "./app/vendor/materialize-config";
 
 // Import CSS
 import "./app/scss/main.scss";
+import "./app/vendor/aos/aos.css"
 
 // Import JavaScript
 import "./app/vendor/hamburger-config";
 import "./app/js/app";
+
+import "./app/vendor/aos-config";

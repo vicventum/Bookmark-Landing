@@ -71,6 +71,7 @@
 
   &__desc {
     text-align: center;
+    z-index: $z-last;
 
     @include media('>=tablet') {
       text-align: left;

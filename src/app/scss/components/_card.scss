@@ -1,18 +1,20 @@
 .cards {
   margin-top: 2.5rem;
 
-  @include media('>=tablet') {
-    margin-top: 0;
-  }
-
+  margin-top: 0;
+  
   $var: 0;
   @for $var from 0 to 3 {
-    .card:nth-child(#{$var + 1}) {
+    .aos-wrapper:nth-child(#{$var + 1}) {
+      margin-top: 2.5rem;
 
-      margin-top: #{$var * 5}rem;    
-      $var: $var + 1; 
+      @include media('>=tablet') {
+        margin-top: #{$var * 5}rem;    
+      }
     }
+      $var: $var + 1; 
   }
+
 }
 .card {
   --size: 2.5rem;
@@ -23,6 +25,7 @@
   transition-property: transform, box-shadow;
   transition-duration: .3s;
   transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+
   @include media('>=tablet') {
 
     &:hover {
